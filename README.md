@@ -2,6 +2,7 @@
 
 **Proyecto solo para uso demostrativo**
 **La API está siendo validada mediante pruebas manuales con Postman**
+**
 
 API REST para gestión de métodos de pagos que **reduce errores y riesgos en el manejo de tarjetas mediante 
 validaciones de reglas de negocio en el dominio**, arquitectura en capas e integración de API externa para obtener los 
@@ -11,6 +12,28 @@ atributos de la tarjeta a través del BIN (bank identification number). **Desarr
 
 ### Estado del proyecto
 En desarrollo (funcional)
+
+---
+
+### Descripción de dominio
+El dominio Tarjeta modela las reglas de negocio críticas asociadas a una tarjeta de pago, encapsulando validaciones y restricciones directamente en el modelo mediante Value Objects inmutables.
+
+El objetivo principal es garantizar consistencia, seguridad y expresividad del dominio, evitando el uso de tipos primitivos para datos sensibles y asegurando que ninguna tarjeta inválida pueda existir dentro del sistema.
+
+Este dominio se valida antes de cualquier operación de persistencia o integración externa.
+
+
+#### Principios de diseño aplicados
+
+Inmutabilidad: Todas las clases del dominio son inmutables (@Value), evitando estados inconsistentes.
+
+Value Objects: Cada atributo relevante se modela como un objeto de valor con reglas propias.
+
+Encapsulación de invariantes: Las validaciones se ejecutan en los constructores, garantizando que el dominio siempre sea válido.
+
+Evitar Primitive Obsession: No se utilizan String o tipos primitivos directamente para representar conceptos del negocio.
+
+Dominio independiente de infraestructura: No contiene anotaciones de persistencia ni dependencias técnicas.
 
 ---
 
@@ -44,3 +67,9 @@ En desarrollo (funcional)
 - **Autor:** Anthony Viveros  
 - **GitHub:** https://github.com/ToniniTech  
 - **Herramientas utilizadas:** Java, Spring Boot, BinList API, Postman
+
+--- 
+
+### Referencias 
+Clean Architecture by Robert C. Martin
+Domain-Driven Design: Tackling Complexity in the Heart of Software by Eric Evans
