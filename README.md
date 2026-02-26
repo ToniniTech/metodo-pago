@@ -10,15 +10,12 @@ atributos de la tarjeta a través del BIN (bank identification number). **Desarr
 ---
 
 ### Estado del proyecto
-🚧 En desarrollo (funcional)
+En desarrollo (funcional)
 
 ---
 
 ### Funcionalidades
-- Crear métodos de pago
-- Actualizar métodos de pago
-- Eliminar métodos de pago
-- Obtener métodos de pago
+- Crear, actualizar, obtener y eliminar métodos de pago.
 
 ---
 
