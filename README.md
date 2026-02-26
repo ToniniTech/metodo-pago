@@ -1,6 +1,7 @@
-# Proyecto Metodo de Pago
+# Proyecto Método de Pago
 
 **Proyecto solo para uso demostrativo**
+
 **La API está siendo validada mediante pruebas manuales con Postman**
 **
 
@@ -71,5 +72,5 @@ Dominio independiente de infraestructura: No contiene anotaciones de persistenci
 --- 
 
 ### Referencias 
-Clean Architecture by Robert C. Martin
-Domain-Driven Design: Tackling Complexity in the Heart of Software by Eric Evans
+-- Clean Architecture by Robert C. Martin
+-- Domain-Driven Design: Tackling Complexity in the Heart of Software by Eric Evans
