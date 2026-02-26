@@ -3,7 +3,7 @@
 **Proyecto solo para uso demostrativo**
 
 **La API está siendo validada mediante pruebas manuales con Postman**
-**
+
 
 API REST para gestión de métodos de pagos que **reduce errores y riesgos en el manejo de tarjetas mediante 
 validaciones de reglas de negocio en el dominio**, arquitectura en capas e integración de API externa para obtener los 
@@ -72,5 +72,5 @@ Dominio independiente de infraestructura: No contiene anotaciones de persistenci
 --- 
 
 ### Referencias 
--- Clean Architecture by Robert C. Martin
--- Domain-Driven Design: Tackling Complexity in the Heart of Software by Eric Evans
+- Clean Architecture by Robert C. Martin
+- Domain-Driven Design: Tackling Complexity in the Heart of Software by Eric Evans
