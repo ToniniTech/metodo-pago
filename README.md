@@ -9,12 +9,12 @@ atributos de la tarjeta a través del BIN (bank identification number). **Desarr
 
 ---
 
-## Estado del proyecto
-🚧 En desarrollo
+### Estado del proyecto
+🚧 En desarrollo (funcional)
 
 ---
 
-## Funcionalidades
+### Funcionalidades
 - Crear métodos de pago
 - Actualizar métodos de pago
 - Eliminar métodos de pago
@@ -22,7 +22,7 @@ atributos de la tarjeta a través del BIN (bank identification number). **Desarr
 
 ---
 
-## Tecnologías y herramientas
+### Tecnologías y herramientas
 - Java
 - Spring Boot
 - API REST
@@ -32,7 +32,7 @@ atributos de la tarjeta a través del BIN (bank identification number). **Desarr
 
 ---
 
-## Mejoras por realizar (Roadmap)
+### Mejoras por realizar (Roadmap)
 - Manejo explícito de errores y códigos HTTP.
 - Gestión del error HTTP 429 (Too Many Requests) cuando la API externa alcanza su límite de solicitudes.
 - Tokenización del número de tarjeta o integración con un gateway de pagos que devuelva un token.
@@ -43,7 +43,7 @@ atributos de la tarjeta a través del BIN (bank identification number). **Desarr
 
 ---
 
-## Créditos
+### Créditos
 - **Autor:** Anthony Viveros  
 - **GitHub:** https://github.com/ToniniTech  
 - **Herramientas utilizadas:** Java, Spring Boot, BinList API, Postman
