@@ -59,7 +59,7 @@ public class Tarjeta {
      
 
     public String numeroTarjeta() {
-        return "***********" + numeroTarjeta.getNumeroTarjeta().substring(12);
+        return "************" + numeroTarjeta.getNumeroTarjeta().substring(12);
     }
 
     public String titular() {
