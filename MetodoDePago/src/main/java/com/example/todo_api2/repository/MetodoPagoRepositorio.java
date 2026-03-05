@@ -19,4 +19,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface MetodoPagoRepositorio extends JpaRepository<MetodoPago, Long>{
     List<MetodoPago> findByEstado(Estado estado);
+    
+    MetodoPago existsByNumeroTarjeta(long Id);
 }

@@ -4,7 +4,6 @@
  */
 package com.example.todo_api2.model;
 
-import java.time.Month;
 import java.time.YearMonth;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
