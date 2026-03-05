@@ -39,12 +39,14 @@ public class MetodoPagoController {
     // Delega la lógica al service actuando como un intermediario entre la petición del cliente y la 
     // lógica de la aplicación
     
-    @PostMapping // Mapea la peticion POST HTTP a metodos específicos dentro de un controlador
+    // Mapea la peticion POST HTTP a metodos específicos dentro de un controlador
+    @PostMapping 
     public RespuestaDTO createMetodoPago(@RequestBody @Valid SolicitudDTO request){
         return servicio.createMetodoPago(request);
     }
     
-    @GetMapping ("/{id}")  // Mapea las solicitudes GET HTTP a metodos específicos dentro de un controlador
+    // Mapea las solicitudes GET HTTP a metodos específicos dentro de un controlador
+    @GetMapping ("/{id}")  
     public RespuestaDTO getMetodoPago(@PathVariable Long id){
         return servicio.getMetodoPago(id);
     }
@@ -54,20 +56,23 @@ public class MetodoPagoController {
     public List<RespuestaDTO> getAllMetodoPago(){
         return servicio.getAllMetodoPago();
     }
-    
-    @PutMapping ("/{id}") // Mapea las solicitdes PUT HTTP a metodos específicos dentro de un controlador
+
+    // Mapea las solicitdes PUT HTTP a metodos específicos dentro de un controlador
+    @PutMapping ("/{id}") 
     
     public RespuestaDTO updateMetodoPago(@PathVariable Long id, @Valid @RequestBody SolicitudDTO request){
         return servicio.updateMetodoPago(id, request);
     }
     
-    @DeleteMapping ("/{id}") // Mapea las solicitudes DELETE HTTP a métodos específicos dentro de un controlador
+    // Mapea las solicitudes DELETE HTTP a métodos específicos dentro de un controlador
+    @DeleteMapping ("/{id}") 
     public void deleteMetodoPago(@PathVariable Long id){
         servicio.deleteMetodoPago(id);
     }
     
-
-    @GetMapping("/bin/{bin}")
+    // Endpoint de entrada para hacer una solicitud HTTP GET y llamar un método específico dentro
+    // controlador
+    @GetMapping("/bin/{bin}") 
     
     public BinInfo getBinInfo(@PathVariable String bin){
         return binClient.obtenerInfoPorBin(bin);
