@@ -4,6 +4,7 @@
  */
 package com.example.todo_api2.exception;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 /**
  *
@@ -29,6 +31,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  * 
  * IllegalArgumentException.class Devuelve con código HTTP 400 Y  captura las excepciones 
  * de las reglas del dominio.
+ * 
+ * handleTooManyRequest se encarga de devolver un código HTTP 429 que indica que el usuario 
+ * ha alcanzado el limite de requests.
+ * 
+ * handleSqlViolation se encarga de devolver UN código HTTP 409 y de indicar que el usuario
+ * esta intentado crear una tarjeta ya registrada en la base de datos.
  * 
  * @author Asus
  */
@@ -58,9 +66,20 @@ public class GlobalExceptionHandler {
     }
     
     @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<String> HandleIllegal(IllegalArgumentException ex){
+    public ResponseEntity<String> handleIllegal(IllegalArgumentException ex){
         return new ResponseEntity<> (ex.getMessage(), HttpStatus.BAD_REQUEST);
     
     }
+    
+    @ExceptionHandler(WebClientResponseException.class)
+    public ResponseEntity<String> handleTooManyRequest(WebClientResponseException ex){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.TOO_MANY_REQUESTS);
+    }
+    
+    
+    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+    public ResponseEntity<String> handleSqlViolation(SQLIntegrityConstraintViolationException ex){
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+                    }
 }  
 
