@@ -21,7 +21,7 @@ import com.example.todo_api2.service.external.BinListClient;
 
 /**
  * Capa de  servicio (service) es el corazón del sistema, se encarga de la lógica de
- * negocio para gestionar los métodos pagos e implementa los interfaz definida en el contrato
+ * negocio para gestionar los métodos pagos e implementa la interfaz definida en el contrato
  * de comportamiento. 
  * 
  * Orquesta la validación de reglas de negocio (dominio), la dependencia de una API externa y 
@@ -71,7 +71,6 @@ public class MetodoPagoServicioImpl implements MetodoPagoServicio {
             .titular(tarjeta.titular())
             .numeroTarjeta(tarjeta.numeroTarjeta())
             .expiracion(tarjeta.expiracion())
-            .cvc(tarjeta.cvc())
             .red(binInfo.getBrand())
             .tipo(binInfo.getType())
             .marca(binInfo.getBrand())
@@ -81,17 +80,11 @@ public class MetodoPagoServicioImpl implements MetodoPagoServicio {
             .estado(Estado.ACTIVO)
             .build();
         
-        MetodoPago guardarMetodoPago = repositorio.save(metodo);
+        // IPersiste el método de pago
         
-        return mapToResponse(guardarMetodoPago);           
-
+            MetodoPago guardarMetodoPago = repositorio.save(metodo);
+            return mapToResponse(guardarMetodoPago);
     }
-
-    /**
-     *
-     * @param id
-     * @return
-     */
 
     // Obtiene el metodo de pago por el ID
     @Override
